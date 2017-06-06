@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8"/>
 <style>
 	body{
-		font-size:16px;
+		font-size:26px;
 	}
 </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -20,6 +19,7 @@
 <button id="meteo">click</button>
 <button id="graphbtn">graphique</button>
 <br/>
+<h1>COUCOU</h1>
 <hr/>
 </body>
 </html>
