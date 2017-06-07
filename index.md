@@ -39,9 +39,7 @@ function Test() {
 	var insee = document.getElementById("myInput").innerHTML
 	document.getElementById("demo").innerHTML = "test ok"
 	var query = '{result(insee:"09042"){params results}}';
-	xhr.send(JSON.stringify({
-	  query: query
-	}));
+	xhr.send(JSON.stringify({query: query}));
 }
 
 function TestInput() {
@@ -55,9 +53,11 @@ function TestInput() {
 	var insee = document.getElementById("myInput").value;
 	document.getElementById("demo").innerHTML = "test input :" + insee;
 	var query = '{result(insee:"' + insee + '"){params results}}';
-	xhr.send(JSON.stringify({
+	var resJson = xhr.send(JSON.stringify({
 	  query: query
 	}));
+	var res = JSON.stringify(resJson);
+	document.getElementById("result").innerHTML = res;
 }
 </script>
 
@@ -71,6 +71,8 @@ function TestInput() {
 <br/>
 <h1>COUCOU</h1>
 <p id="demo"></p>
+<h2>result</h2>
+<p id="result"></p>
 <hr/>
 </body>
 </html>
