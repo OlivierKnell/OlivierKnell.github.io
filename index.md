@@ -37,7 +37,23 @@ function Test() {
 	  console.log('data returned:', xhr.response);
 	}
 	var insee = document.getElementById("myInput").innerHTML
-	document.getElementById("demo").innerHTML = insee
+	document.getElementById("demo").innerHTML = "test ok"
+	var query = '{result(insee:"09042"){params results}}';
+	xhr.send(JSON.stringify({
+	  query: query
+	}));
+}
+
+function TestInput() {
+	xhr = createCORSRequest("POST", "https://terralego-scraper.herokuapp.com/graphql");
+	xhr.responseType = 'json';
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.onload = function () {
+	  console.log('data returned:', xhr.response);
+	}
+	var insee = document.getElementById("myInput").innerHTML
+	document.getElementById("demo").innerHTML = "test input :" + insee
 	var query = '{result(insee:"' + insee + '"){params results}}';
 	xhr.send(JSON.stringify({
 	  query: query
@@ -50,6 +66,7 @@ function Test() {
 <button onclick="Delete()">Delete</button>
 <button onclick="Show()" >Show</button>
 <input id="myInput" type="text">
+<button onclick="TestInput()" >test input</button>
 <button onclick="Test()" >test</button>
 <br/>
 <h1>COUCOU</h1>
