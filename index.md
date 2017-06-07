@@ -15,11 +15,23 @@ function Show() {
     document.getElementById("demo").innerHTML = "Paragraph";
 }
 function Test() {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("POST", 'https://terralego-scraper.herokuapp.com/graphql?query={result(insee: "09042") {params results}}', true);
-    xmlHttp.send(null);
-    console.log(xmlHttp.status);
-    console.log(xmlHttp.statusText);
+    var xhr = new XMLHttpRequest();
+	xhr.responseType = 'json';
+	xhr.open("POST", "https://terralego-scraper.herokuapp.com/graphql");
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.onload = function () {
+	  console.log('data returned:', xhr.response);
+	}
+	var query = {
+	  result(insee: "09042") {
+	    params
+	    results
+	  }
+	};
+	xhr.send(JSON.stringify({
+	  query: query
+	}));
 }
 </script>
 
