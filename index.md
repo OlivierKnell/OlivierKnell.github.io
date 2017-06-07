@@ -18,7 +18,7 @@ function Show() {
 function Test() {
     var xhr = new XMLHttpRequest();
 	xhr.responseType = 'json';
-	xhr.open("POST", "https://terralego-scraper.herokuapp.com/graphql");
+	xhr.open("POST", "https://crossorigin.me/https://terralego-scraper.herokuapp.com/graphql");
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.setRequestHeader("Accept", "application/json");
 	xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
