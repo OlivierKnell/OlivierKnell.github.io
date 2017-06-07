@@ -7,6 +7,19 @@
 	}
 </style>
 <script>
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    xhr = null;
+  }
+  return xhr;
+}
+
 function Delete() {
     document.getElementById("demo").innerHTML = "";
 }
@@ -16,9 +29,8 @@ function Show() {
 }
 
 function Test() {
-    var xhr = new XMLHttpRequest();
+	xhr = createCORSRequest("POST", "https://terralego-scraper.herokuapp.com/graphql");
 	xhr.responseType = 'json';
-	xhr.open("POST", "https://crossorigin.me/https://terralego-scraper.herokuapp.com/graphql", true);
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.setRequestHeader("Accept", "application/json");
 	xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
