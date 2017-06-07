@@ -42,6 +42,13 @@ function TestInput(callback) {
 	xhr.setRequestHeader("Accept", "application/json");
 	xhr.onload = function () {
 	  console.log('data returned:', xhr.response);
+	  if (xhr.readyState === 4) {
+	    if (xhr.status === 200) {
+	      myCallback(xhr);
+	    } else {
+	      console.error(xhr.statusText);
+	    }
+	  }
 	}
 	var insee = document.getElementById("myInput").value;
 	document.getElementById("demo").innerHTML = "test input :" + insee;
