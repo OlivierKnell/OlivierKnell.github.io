@@ -53,9 +53,10 @@ function TestInput() {
 	var insee = document.getElementById("myInput").value;
 	document.getElementById("demo").innerHTML = "test input :" + insee;
 	var query = '{result(insee:"' + insee + '"){params results}}';
-	var resJson = xhr.send(JSON.stringify({
+	xhr.send(JSON.stringify({
 	  query: query
 	}));
+	var resJson = xhr.response
 	var res = JSON.stringify(resJson);
 	document.getElementById("result").innerHTML = res;
 }
