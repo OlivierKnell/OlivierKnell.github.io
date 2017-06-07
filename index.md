@@ -52,8 +52,8 @@ function TestInput() {
 	xhr.onload = function () {
 	  console.log('data returned:', xhr.response);
 	}
-	var insee = document.getElementById("myInput").innerHTML
-	document.getElementById("demo").innerHTML = "test input :" + insee
+	var insee = document.getElementById("myInput").value();
+	document.getElementById("demo").innerHTML = "test input :" + insee;
 	var query = '{result(insee:"' + insee + '"){params results}}';
 	xhr.send(JSON.stringify({
 	  query: query
