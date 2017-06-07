@@ -10,7 +10,6 @@
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
   xhr.open(method, url, true);
-  }
   return xhr;
 }
 
