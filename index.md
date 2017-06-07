@@ -6,7 +6,7 @@
 		font-size:26px;
 	}
 </style>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+<script>
 var request = require('request');
 request('http://www.google.com', function (error, response, body) {
   console.log('error:', error); // Print the error if one occurred
