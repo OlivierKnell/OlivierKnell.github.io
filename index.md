@@ -45,12 +45,6 @@ function Test() {
 
 </head>
 <body>
-<select id="ville">
-	<option value="toulouse">Toulouse</option>
-	<option value="bordeaux">Bordeaux</option>
-	<option value="paris">Paris</option>
-	<option value="marseille">Marseille</option>
-</select>
 <button onclick="Delete()">Delete</button>
 <button onclick="Show()" >Show</button>
 <button onclick="Test()" >test</button>
