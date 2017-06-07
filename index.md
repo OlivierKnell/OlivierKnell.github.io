@@ -48,10 +48,12 @@ function TestInput() {
 	var query = '{result(insee:"' + insee + '"){params results}}';
 	xhr.send(JSON.stringify({
 	  query: query
-	}));
-	var resJson = xhr.response
+	})).then(function() {
+       var resJson = xhr.response
 	var res = JSON.stringify(resJson);
 	document.getElementById("result").innerHTML = res;
+    })
+	
 }
 </script>
 
