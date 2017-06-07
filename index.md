@@ -15,12 +15,11 @@ function Show() {
     document.getElementById("demo").innerHTML = "Paragraph";
 }
 function Test() {
-    var xhr = new XMLHttpRequest();
-	xhr.open("GET", "https://www.codecademy.com/", false);
-	xhr.send();
-
-	console.log(xhr.status);
-	console.log(xhr.statusText);
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", "https://www.codecademy.com/", true); // true for asynchronous 
+    xmlHttp.send(null);
+    console.log(xhr.status);
+    console.log(xhr.statusText);
 }
 </script>
 
