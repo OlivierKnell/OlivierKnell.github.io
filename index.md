@@ -36,7 +36,9 @@ function Test() {
 	xhr.onload = function () {
 	  console.log('data returned:', xhr.response);
 	}
-	var query = '{result(insee:"09042"){params results}}';
+	var insee = document.getElementById("myInput").innerHTML
+	document.getElementById("demo").innerHTML = insee
+	var query = '{result(insee:"' + insee + '"){params results}}';
 	xhr.send(JSON.stringify({
 	  query: query
 	}));
@@ -47,6 +49,7 @@ function Test() {
 <body>
 <button onclick="Delete()">Delete</button>
 <button onclick="Show()" >Show</button>
+<input id="myInput" type="text">
 <button onclick="Test()" >test</button>
 <br/>
 <h1>COUCOU</h1>
