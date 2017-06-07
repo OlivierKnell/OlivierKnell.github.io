@@ -35,7 +35,7 @@ function Test() {
 	xhr.send(JSON.stringify({query: query}));
 }
 
-function TestInput() {
+function TestInput(callback) {
 	xhr = createCORSRequest("POST", "https://terralego-scraper.herokuapp.com/graphql");
 	xhr.responseType = 'json';
 	xhr.setRequestHeader("Content-Type", "application/json");
@@ -46,12 +46,14 @@ function TestInput() {
 	var insee = document.getElementById("myInput").value;
 	document.getElementById("demo").innerHTML = "test input :" + insee;
 	var query = '{result(insee:"' + insee + '"){params results}}';
+	xhr.callback = function(){
+	    var resJson = xhr.response
+	    var res = JSON.stringify(resJson);
+  	    document.getElementById("result").innerHTML = res;	
+	}
 	xhr.send(JSON.stringify({
 	  query: query
 	}))
-        var resJson = xhr.response
-	var res = JSON.stringify(resJson);
-	document.getElementById("result").innerHTML = res;	
 }
 </script>
 
