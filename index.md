@@ -21,6 +21,7 @@ function Test() {
 	xhr.open("POST", "https://terralego-scraper.herokuapp.com/graphql");
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.setRequestHeader("Accept", "application/json");
+	xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
 	xhr.onload = function () {
 	  console.log('data returned:', xhr.response);
 	}
@@ -48,3 +49,4 @@ function Test() {
 <hr/>
 </body>
 </html>
+
