@@ -16,7 +16,7 @@ function Show() {
 }
 function Test() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("POST", 'https://terralego-scraper.herokuapp.com/graphql?query={ %0A result(insee%3A "09042") { %0A params%0A results%0A }%0A}%0A', false); // true for asynchronous 
+    xmlHttp.open("POST", 'https://terralego-scraper.herokuapp.com/graphql?query={result(insee: "09042") {params results}}', true);
     xmlHttp.send(null);
     console.log(xmlHttp.status);
     console.log(xmlHttp.statusText);
