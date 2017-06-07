@@ -21,7 +21,6 @@ function Test() {
 
 	console.log(xhr.status);
 	console.log(xhr.statusText);
-});
 }
 </script>
 
