@@ -32,7 +32,7 @@ function TestInput(callback) {
 
 function myCallback(xhr){
 	var resJson = xhr.response
-	var res = JSON.stringify(resJson);
+	var res = JSON.stringify(resJson, null, 4);
 	document.getElementById("result").innerHTML = res;	
 }
 </script>
