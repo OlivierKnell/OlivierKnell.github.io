@@ -7,12 +7,9 @@
 	}
 </style>
 <script>
-var request = require('request');
-request('http://www.google.com', function (error, response, body) {
-  console.log('error:', error); // Print the error if one occurred
-  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log('body:', body); // Print the HTML for the Google homepage.
-});
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
 </script>
 
 </head>
@@ -24,9 +21,10 @@ request('http://www.google.com', function (error, response, body) {
 	<option value="marseille">Marseille</option>
 </select>
 <button id="meteo">click</button>
-<button id="graphbtn">graphique</button>
+<button id="graphbtn" onclick="myFunction()" >graphique</button>
 <br/>
 <h1>COUCOU</h1>
+<p id="demo"></p>
 <hr/>
 </body>
 </html>
