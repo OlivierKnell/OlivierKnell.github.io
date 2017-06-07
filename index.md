@@ -34,7 +34,7 @@ function myCallback(xhr){
 	var resJson = xhr.response;
 	var res = JSON.stringify(resJson, null, 4);
 	document.getElementById("result").innerHTML = res;
-	showData(resJson);
+	//showData(resJson);
 }
 
 function showData(json){
