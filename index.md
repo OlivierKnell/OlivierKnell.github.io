@@ -7,8 +7,12 @@
 	}
 </style>
 <script>
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Paragraph changed.";
+function Delete() {
+    document.getElementById("demo").innerHTML = "";
+}
+
+function Show() {
+    document.getElementById("demo").innerHTML = "Paragraph";
 }
 </script>
 
@@ -20,8 +24,8 @@ function myFunction() {
 	<option value="paris">Paris</option>
 	<option value="marseille">Marseille</option>
 </select>
-<button id="meteo">click</button>
-<button id="graphbtn" onclick="myFunction()" >graphique</button>
+<button onclick="Delete()">Delete</button>
+<button onclick="Show()" >Show</button>
 <br/>
 <h1>COUCOU</h1>
 <p id="demo"></p>
