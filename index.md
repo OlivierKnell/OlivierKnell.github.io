@@ -23,7 +23,7 @@ function TestInput(callback) {
 	  }
 	}
 	var insee = document.getElementById("myInput").value;
-	var query = '{result(insee:"' + insee + '"){params results}}';
+	var query = '{result(insee:"' + insee + '"){params results valueDate}}';
 	xhr.callback = callback(xhr);
 	xhr.send(JSON.stringify({
 	  query: query
@@ -31,9 +31,15 @@ function TestInput(callback) {
 }
 
 function myCallback(xhr){
-	var resJson = xhr.response
+	var resJson = xhr.response;
 	var res = JSON.stringify(resJson, null, 4);
-	document.getElementById("result").innerHTML = res;	
+	document.getElementById("result").innerHTML = res;
+	showData(resJson);
+}
+
+function showData(json){
+	var str = "Date : " + json.data.result.valueDate;
+	document.getElementById("result").innerHTML = str;
 }
 </script>
 </head>
@@ -42,8 +48,10 @@ function myCallback(xhr){
 <input id="myInput" type="text">
 <button onclick="TestInput(myCallback)" >get data</button>
 <br/>
-<h2>result</h2>
+<h2>result brut</h2>
 <p id="result"></p>
+<h2>result nice</h2>
+<p id="resultNice"></p>
 <hr/>
 </body>
 </html>
