@@ -16,7 +16,7 @@ function Show() {
 }
 function Test() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "https://www.codecademy.com/", true); // true for asynchronous 
+    xmlHttp.open("GET", "https://www.codecademy.com/", false); // true for asynchronous 
     xmlHttp.send(null);
     console.log(xmlHttp.status);
     console.log(xmlHttp.statusText);
