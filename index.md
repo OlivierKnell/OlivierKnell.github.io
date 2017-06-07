@@ -46,14 +46,16 @@ function TestInput(callback) {
 	var insee = document.getElementById("myInput").value;
 	document.getElementById("demo").innerHTML = "test input :" + insee;
 	var query = '{result(insee:"' + insee + '"){params results}}';
-	xhr.callback = function(){
-	    var resJson = xhr.response
-	    var res = JSON.stringify(resJson);
-  	    document.getElementById("result").innerHTML = res;	
-	}
+	xhr.callback = callback(xhr);
 	xhr.send(JSON.stringify({
 	  query: query
-	}))
+	}));
+}
+
+function myCallback(xhr){
+	var resJson = xhr.response
+	var res = JSON.stringify(resJson);
+	document.getElementById("result").innerHTML = res;	
 }
 </script>
 
@@ -62,7 +64,7 @@ function TestInput(callback) {
 <button onclick="Delete()">Delete</button>
 <button onclick="Show()" >Show</button>
 <input id="myInput" type="text">
-<button onclick="TestInput()" >test input</button>
+<button onclick="TestInput(myCallback)" >test input</button>
 <button onclick="Test()" >test</button>
 <br/>
 <h1>COUCOU</h1>
