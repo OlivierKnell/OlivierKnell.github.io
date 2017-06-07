@@ -14,6 +14,7 @@ function Delete() {
 function Show() {
     document.getElementById("demo").innerHTML = "Paragraph";
 }
+
 function Test() {
     var xhr = new XMLHttpRequest();
 	xhr.responseType = 'json';
@@ -23,12 +24,7 @@ function Test() {
 	xhr.onload = function () {
 	  console.log('data returned:', xhr.response);
 	}
-	var query = {
-	  result(insee: "09042") {
-	    params
-	    results
-	  }
-	};
+	var query = '{result(insee:"09042"){params results}}';
 	xhr.send(JSON.stringify({
 	  query: query
 	}));
