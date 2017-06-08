@@ -16,7 +16,7 @@ function TestInput(callback) {
 	  console.log('data returned:', xhr.response);
 	  if (xhr.readyState === 4) {
 	    if (xhr.status === 200) {
-	      callback(xhr, showData);
+	      callback(xhr);
 	    } else {
 	      console.error(xhr.statusText);
 	    }
@@ -36,7 +36,7 @@ function TestInput(callback) {
 	}));
 }
 
-function myCallback(xhr, callback){
+function myCallback(xhr){
 	var resJson = xhr.response;
 	var res = '<pre>' + JSON.stringify(resJson, null, 4) + '</' + 'pre>';
 	document.getElementById("result").innerHTML = res;
@@ -52,7 +52,7 @@ function testRest(){
 	  console.log('data returned:', xhr.response);
 	  if (xhr.readyState === 4) {
 	    if (xhr.status === 200) {
-	      callback(xhr, showData);
+	      callback(xhr);
 	    } else {
 	      console.error(xhr.statusText);
 	    }
