@@ -60,8 +60,6 @@ function showData(json){
 <br/>
 <h2>result raw</h2>
 <p id="result"></p>
-<h2>result nice</h2>
-<p id="resultNice"></p>
 <hr/>
 </body>
 </html>
