@@ -24,30 +24,23 @@ function TestInput(callback) {
 	}
 	var insee = document.getElementById("myInput").value;
 	var query = '{result(insee:"' + insee + '"){params results valueDate}}';
-	//xhr.callback = callback(xhr);
 	xhr.send(JSON.stringify({
 	  query: query
 	}));
-	console.log('test input1');
-	//callback(xhr, showData);
 }
 
 function myCallback(xhr, callback){
-	console.log("my callback 1");
 	var resJson = xhr.response;
 	var res = JSON.stringify(resJson, null, 4);
 	document.getElementById("result").innerHTML = res;
 	var str = "Date : " + resJson.data.result.valueDate;
 	document.getElementById("resultNice").innerHTML = str;
-	//showData(resJson);
-	console.log("my callback 2");
 	callback(resJson);
 }
 
 function showData(json){
 	var str = "Date : " + json.data.result.valueDate;
 	document.getElementById("resultNice").innerHTML = str;
-	console.log("show data");
 }
 </script>
 </head>
