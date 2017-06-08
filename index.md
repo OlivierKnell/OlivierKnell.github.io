@@ -23,7 +23,14 @@ function TestInput(callback) {
 	  }
 	}
 	var insee = document.getElementById("myInput").value;
-	var query = '{result(insee:"' + insee + '"){params results valueDate}}';
+	var query = '{result(insee:"' + insee + '"){params' 
+	if (document.getElementById("checkResults").checked == true){
+		query += ' results';
+	};
+	if (document.getElementById("checkValueDate").checked == true){
+		query += ' valueDate';
+	};
+	query += '}}';
 	xhr.send(JSON.stringify({
 	  query: query
 	}));
@@ -53,6 +60,8 @@ function showData(json){
 </head>
 
 <body>
+<input type="checkbox" id="checkResults"> I want results<br>
+<input type="checkbox" id="checkValueDate"> I want date<br>
 <input id="myInput" type="text">
 <button onclick="TestInput(myCallback)" >get data</button>
 <br/>
