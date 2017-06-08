@@ -16,7 +16,7 @@ function TestInput(callback) {
 	  console.log('data returned:', xhr.response);
 	  if (xhr.readyState === 4) {
 	    if (xhr.status === 200) {
-	      myCallback(xhr);
+	      callback(xhr, showData);
 	    } else {
 	      console.error(xhr.statusText);
 	    }
@@ -29,7 +29,7 @@ function TestInput(callback) {
 	  query: query
 	}));
 	console.log('test input1');
-	callback(xhr, showData);
+	//callback(xhr, showData);
 }
 
 function myCallback(xhr, callback){
