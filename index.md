@@ -43,11 +43,11 @@ function showData(json){
 	console.log('data4 : '+ JSON.stringify(json.data.result.valueDate));
 	var results = json.data.result
 	var str = "Data : \n"
-	for (result in results){
-		str += "\nDate : " + JSON.stringify(result.valueDate);
-		str += "\nParams : " + JSON.stringify(result.params);
-		str += "\nResults : " + JSON.stringify(result.results);
-	}
+	//for (result in results){
+		str += "\nDate : " + JSON.stringify(json.data.result[0].valueDate);
+		str += "\nParams : " + JSON.stringify(json.data.result[0].params);
+		str += "\nResults : " + JSON.stringify(json.data.result[0].results);
+	//}
 	document.getElementById("resultNice").innerHTML = str;
 }
 </script>
