@@ -33,13 +33,14 @@ function TestInput(callback) {
 }
 
 function myCallback(xhr, callback){
+	console.log("my callback 1");
 	var resJson = xhr.response;
 	var res = JSON.stringify(resJson, null, 4);
 	document.getElementById("result").innerHTML = res;
 	var str = "Date : " + resJson.data.result.valueDate;
 	document.getElementById("resultNice").innerHTML = str;
 	//showData(resJson);
-	console.log("my callback");
+	console.log("my callback 2");
 	callback(resJson);
 }
 
