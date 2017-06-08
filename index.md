@@ -43,18 +43,22 @@ function myCallback(xhr, callback){
 	callback(resJson);
 }
 
-function showData(json){
-	//console.log('data3 : '+ JSON.stringify(json.data.result[0].params));
-	/*
-	var results = json.data.result
-	var str = ""
-	for (i = 0; i < results.length; i++){
-		str += "\nDate : " + JSON.stringify(results[i].valueDate, null, 4);
-		str += '\nParams : ' + '<pre>' + JSON.stringify(results[i].params, null, 4) + '</' + 'pre>';
-		//str += "\nResults : " + JSON.stringify(results[i].results);
+function testRest(){
+	xhr = createCORSRequest("POST", "http://127.0.0.1:8000/api/result_eau/");
+	xhr.responseType = 'json';
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.onload = function () {
+	  console.log('data returned:', xhr.response);
+	  if (xhr.readyState === 4) {
+	    if (xhr.status === 200) {
+	      callback(xhr, showData);
+	    } else {
+	      console.error(xhr.statusText);
+	    }
+	  }
 	}
-	document.getElementById("resultNice").innerHTML = str;
-	*/
+	xhr.send();
 }
 </script>
 </head>
@@ -65,6 +69,7 @@ function showData(json){
 <input type="checkbox" id="checkResults"> I want results<br>
 <input type="checkbox" id="checkValueDate"> I want date<br>
 <button onclick="TestInput(myCallback)" >Apply</button>
+<button onclick="TestRest()" >test rest api</button>
 <br/>
 <h2>Result :</h2>
 <p id="result"></p>
