@@ -40,7 +40,6 @@ function myCallback(xhr){
 	var resJson = xhr.response;
 	var res = '<pre>' + JSON.stringify(resJson, null, 4) + '</' + 'pre>';
 	document.getElementById("result").innerHTML = res;
-	callback(resJson);
 }
 
 function testRest(){
