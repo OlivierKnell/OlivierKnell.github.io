@@ -69,7 +69,7 @@ function testRest(){
 <input type="checkbox" id="checkResults"> I want results<br>
 <input type="checkbox" id="checkValueDate"> I want date<br>
 <button onclick="TestInput(myCallback)" >Apply</button>
-<button onclick="TestRest()" >test rest api</button>
+<button onclick="testRest()" >test rest api</button>
 <br/>
 <h2>Result :</h2>
 <p id="result"></p>
