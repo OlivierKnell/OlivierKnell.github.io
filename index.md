@@ -29,6 +29,7 @@ function TestInput(callback) {
 	  query: query
 	}));
 	callback(xhr, showData);
+	console.log('test input');
 }
 
 function myCallback(xhr, callback){
