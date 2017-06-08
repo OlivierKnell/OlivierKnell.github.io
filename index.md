@@ -65,7 +65,7 @@ function showData(json){
 <input id="myInput" type="text">
 <button onclick="TestInput(myCallback)" >get data</button>
 <br/>
-<h2>result raw</h2>
+<h2>Result :</h2>
 <p id="result"></p>
 <hr/>
 </body>
