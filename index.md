@@ -60,10 +60,10 @@ function showData(json){
 </head>
 
 <body>
+<input id="myInput" type="text" placeholder="code insee here">
 <input type="checkbox" id="checkResults"> I want results<br>
 <input type="checkbox" id="checkValueDate"> I want date<br>
-<input id="myInput" type="text">
-<button onclick="TestInput(myCallback)" >get data</button>
+<button onclick="TestInput(myCallback)" >Apply</button>
 <br/>
 <h2>Result :</h2>
 <p id="result"></p>
