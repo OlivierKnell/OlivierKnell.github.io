@@ -40,6 +40,7 @@ function myCallback(xhr, callback){
 
 function showData(json){
 	//console.log('data3 : '+ JSON.stringify(json.data.result[0].params));
+	/*
 	var results = json.data.result
 	var str = ""
 	for (i = 0; i < results.length; i++){
@@ -48,6 +49,7 @@ function showData(json){
 		//str += "\nResults : " + JSON.stringify(results[i].results);
 	}
 	document.getElementById("resultNice").innerHTML = str;
+	*/
 }
 </script>
 </head>
