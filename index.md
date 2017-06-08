@@ -30,7 +30,6 @@ function TestInput(callback) {
 	}));
 	console.log('test input1');
 	callback(xhr, showData);
-	console.log('test input2');
 }
 
 function myCallback(xhr, callback){
@@ -40,8 +39,8 @@ function myCallback(xhr, callback){
 	var str = "Date : " + resJson.data.result.valueDate;
 	document.getElementById("resultNice").innerHTML = str;
 	//showData(resJson);
-	callback(resJson);
 	console.error("my callback");
+	callback(resJson);
 }
 
 function showData(json){
