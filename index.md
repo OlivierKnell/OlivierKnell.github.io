@@ -41,7 +41,13 @@ function myCallback(xhr, callback){
 function showData(json){
 	console.log('data3 : '+ JSON.stringify(json.data.result[0].params));
 	console.log('data4 : '+ JSON.stringify(json.data.result.valueDate));
-	var str = "Date : " + json.data.result.valueDate;
+	var results = json.data.result
+	var str = "Data : \n"
+	for (result in results){
+		str += "\nDate : " + JSON.stringify(result.valueDate);
+		str += "\nParams : " + JSON.stringify(result.params);
+		str += "\nResults : " + JSON.stringify(result.results);
+	}
 	document.getElementById("resultNice").innerHTML = str;
 }
 </script>
