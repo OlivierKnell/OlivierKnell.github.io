@@ -22,15 +22,15 @@ function TestInput(callback) {
 	    }
 	  }
 	}
-	console.log('test input');
 	var insee = document.getElementById("myInput").value;
 	var query = '{result(insee:"' + insee + '"){params results valueDate}}';
 	//xhr.callback = callback(xhr);
 	xhr.send(JSON.stringify({
 	  query: query
 	}));
+	console.log('test input1');
 	callback(xhr, showData);
-	console.log('test input');
+	console.log('test input2');
 }
 
 function myCallback(xhr, callback){
