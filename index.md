@@ -8,7 +8,6 @@ function createCORSRequest(method, url) {
   return xhr;
 }
 function TestInput(callback) {
-	console.log('test input');
 	xhr = createCORSRequest("POST", "https://terralego-scraper.herokuapp.com/graphql");
 	xhr.responseType = 'json';
 	xhr.setRequestHeader("Content-Type", "application/json");
@@ -23,6 +22,7 @@ function TestInput(callback) {
 	    }
 	  }
 	}
+	console.log('test input');
 	var insee = document.getElementById("myInput").value;
 	var query = '{result(insee:"' + insee + '"){params results valueDate}}';
 	//xhr.callback = callback(xhr);
