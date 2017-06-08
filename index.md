@@ -39,11 +39,13 @@ function myCallback(xhr, callback){
 	document.getElementById("resultNice").innerHTML = str;
 	//showData(resJson);
 	callback(resJson);
+	console.error("my callback");
 }
 
 function showData(json){
 	var str = "Date : " + json.data.result.valueDate;
 	document.getElementById("resultNice").innerHTML = str;
+	console.error("show data");
 }
 </script>
 </head>
