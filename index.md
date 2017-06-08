@@ -39,7 +39,10 @@ function myCallback(xhr, callback){
 }
 
 function showData(json){
-	console.log('data : '+ json.data.result.valueDate);
+	console.log('data1 : '+ json);
+	console.log('data2 : '+ json.data);
+	console.log('data3 : '+ json.data.result);
+	console.log('data4 : '+ JSON.stringify(json.data.result.valueDate));
 	var str = "Date : " + json.data.result.valueDate;
 	document.getElementById("resultNice").innerHTML = str;
 }
