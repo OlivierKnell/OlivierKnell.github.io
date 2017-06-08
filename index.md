@@ -44,8 +44,8 @@ function showData(json){
 	var results = json.data.result
 	var str = ""
 	for (i = 0; i < results.length; i++){
-		str += "\nDate : " + JSON.stringify(results[i].valueDate);
-		str += "\nParams : " + JSON.stringify(results[i].params);
+		str += "\nDate : " + JSON.stringify(results[i].valueDate, null, 4);
+		str += "\nParams : " + JSON.stringify(results[i].params, null, 4);
 		//str += "\nResults : " + JSON.stringify(results[i].results);
 	}
 	document.getElementById("resultNice").innerHTML = str;
