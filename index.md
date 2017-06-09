@@ -111,6 +111,19 @@ function testRest(){
 	xhr.send();
 }
 </script>
+
+<style>
+#resultJson {
+    float: left;
+    max-width: 300px;
+}
+
+#resultTab {
+    margin-left: 310px;
+    overflow: hidden;
+}
+</style>
+
 </head>
 
 <body>
@@ -120,7 +133,7 @@ function testRest(){
 <input type="checkbox" id="checkValueDate"> I want date<br>
 <button onclick="TestInput(myCallback)" >Apply</button>
 <br/>
-<div id="resultJson" style='float:left; max-width:300px;'>
+<div id="resultJson">
 <h2>Result :</h2>
 <p id="resultJ"></p>
 </div>
