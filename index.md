@@ -47,13 +47,12 @@ function myCallback(xhr){
 
 function showResInTable(json){
 	var finalResult = "";
-	for (var result in json.data.result){
+	results = json.data.result
+	for (var result in results){
 		var myResult = "<div><h3>Data : </h3><br/>";
 		myResult += "<table>";
-		var params = result.params;
-		console.log(JSON.stringify(json.data.result[result]));
+		var params = results[result].params;
 		for (var param in params){
-			console.log(JSON.stringify(param));
 			var key = param;
 			var val = params[param];
 			myResult += "<tr><td>" + JSON.stringify(key) + "</td><td>" + JSON.stringify(val) + "</td></tr>";
