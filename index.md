@@ -54,7 +54,9 @@ function showResInTable(json){
 			myResult += "<tr><td>" + key + "</td><td>" + val + "</td></tr>";
 		}
 		myResult += "</table>";
+		finalResult += myResult;
 	}
+	document.getElementById("resultT").innerHTML = finalResult;
 }
 
 function testRest(){
