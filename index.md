@@ -2,11 +2,13 @@
 <head>
 <meta charset="utf-8"/>
 <script>
+
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
   xhr.open(method, url, true);
   return xhr;
 }
+
 function TestInput(callback) {
 	xhr = createCORSRequest("POST", "https://terralego-scraper.herokuapp.com/graphql");
 	xhr.responseType = 'json';
@@ -44,7 +46,7 @@ function myCallback(xhr){
 }
 
 function showResInTable(json){
-	var finalResult = ""
+	var finalResult = "";
 	for (var result in json.data.result){
 		var myResult = "<div><h3>Data : </h3><br/>";
 		myResult += "<table>";
@@ -53,7 +55,7 @@ function showResInTable(json){
 			console.log(JSON.stringify(param));
 			var key = param;
 			var val = params[param];
-			myResult += "<tr><td>" + JSON.stringify( + "</td><td>" + JSON.stringify(val) + "</td></tr>";
+			myResult += "<tr><td>" + JSON.stringify(key) + "</td><td>" + JSON.stringify(val) + "</td></tr>";
 		}
 		myResult += "</table>";
 		finalResult += myResult;
@@ -71,7 +73,8 @@ function testRest(){
 	  if (xhr.readyState === 4) {
 	    if (xhr.status === 200) {
 	      callback(xhr);
-	    } else {
+	    } 
+	    else {
 	      console.error(xhr.statusText);
 	    }
 	  }
