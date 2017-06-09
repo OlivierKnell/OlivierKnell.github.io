@@ -120,11 +120,11 @@ function testRest(){
 <input type="checkbox" id="checkValueDate"> I want date<br>
 <button onclick="TestInput(myCallback)" >Apply</button>
 <br/>
-<div id="resultJson" style='float:left width:50%'>
+<div id="resultJson" style='float:left max-width: 300px;'>
 <h2>Result :</h2>
 <p id="resultJ"></p>
 </div>
-<div id="resultTab" style='width:50%'>
+<div id="resultTab">
 <h2>Result in table :</h2>
 <div id="resultT"></div>
 </div>
