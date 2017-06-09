@@ -38,10 +38,10 @@ function TestInput(callback) {
 	}));
 }
 
-function myCallback(xhr, div){
+function myCallback(xhr){
 	var resJson = xhr.response;
 	var res = '<pre>' + JSON.stringify(resJson, null, 4) + '</' + 'pre>';
-	document.getElementById(div).innerHTML = res;
+	document.getElementById('resultJ').innerHTML = res;
 	showResInTable(resJson);
 }
 
@@ -118,7 +118,7 @@ function testRest(){
 <br/>
 <input type="checkbox" id="checkResults"> I want results<br>
 <input type="checkbox" id="checkValueDate"> I want date<br>
-<button onclick="TestInput(myCallback, 'resultJ')" >Apply graphql</button>
+<button onclick="TestInput(myCallback)" >Apply graphql</button>
 <br/>
 <div id="resultJson">
 <h2>Result :</h2>
