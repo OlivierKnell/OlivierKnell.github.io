@@ -60,7 +60,7 @@ function showResInTable(json){
 		}
 		myResult += "</table>";
 		
-		if (document.getElementById("checkResults").checked == true){
+		if (document.getElementById("checkValueDate").checked == true){
 			var dates = results[result].valueDate;
 			myResult += "<table>";
 			for (var date in dates){
@@ -71,7 +71,7 @@ function showResInTable(json){
 			myResult += "</table>";
 		};
 		
-		if (document.getElementById("checkValueDate").checked == true){
+		if (document.getElementById("checkResults").checked == true){
 			var analytiques = results[result].results.infos_analytiques
 			var generales = results[result].results.infos_generales
 			
