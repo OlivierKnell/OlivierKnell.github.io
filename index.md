@@ -111,19 +111,6 @@ function testRest(){
 	xhr.send();
 }
 </script>
-
-<style>
-#resultJson {
-    float: left;
-    max-width: 300px;
-}
-
-#resultTab {
-    margin-left: 310px;
-    overflow: hidden;
-}
-</style>
-
 </head>
 
 <body>
