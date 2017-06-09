@@ -39,7 +39,7 @@ function TestInput(callback) {
 function myCallback(xhr){
 	var resJson = xhr.response;
 	var res = '<pre>' + JSON.stringify(resJson, null, 4) + '</' + 'pre>';
-	document.getElementById("result").innerHTML = res;
+	document.getElementById("resultJ").innerHTML = res;
 }
 
 function showResInTable(json){
