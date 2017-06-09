@@ -40,8 +40,8 @@ function TestInput(callback) {
 
 function myCallback(xhr){
 	var resJson = xhr.response;
-	var res = '<pre>' + JSON.stringify(resJson, null, 4) + '</' + 'pre>';
-	document.getElementById("resultJ").innerHTML = syntaxHighlight(res);
+	var res = '<pre>' + syntaxHighlight(JSON.stringify(resJson, null, 4)) + '</' + 'pre>';
+	document.getElementById("resultJ").innerHTML = res;
 	showResInTable(resJson);
 }
 
