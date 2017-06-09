@@ -52,7 +52,7 @@ function showResInTable(json){
 		for (var param in params){
 			var key = param;
 			var val = params[param];
-			myResult += "<tr><td>" + key + "</td><td>" + val + "</td></tr>";
+			myResult += "<tr><td>" + JSON.stringify(key) + "</td><td>" + JSON.stringify(val) + "</td></tr>";
 		}
 		myResult += "</table>";
 		finalResult += myResult;
