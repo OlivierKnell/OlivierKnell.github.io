@@ -51,9 +51,6 @@ function showResInTable(json){
 	for (var result in results){
 		var myResult = "<div><h3>Data : </h3><br/>";
 		var params = results[result].params;
-		var dates = results[result].valueDate;
-		var analytiques = results[result].results.infos_analytiques
-		var generales = results[result].results.infos_generales
 		
 		myResult += "<table>";
 		for (var param in params){
@@ -64,6 +61,7 @@ function showResInTable(json){
 		myResult += "</table>";
 		
 		if (document.getElementById("checkResults").checked == true){
+			var dates = results[result].valueDate;
 			myResult += "<table>";
 			for (var date in dates){
 				var key = date;
@@ -74,6 +72,9 @@ function showResInTable(json){
 		};
 		
 		if (document.getElementById("checkValueDate").checked == true){
+			var analytiques = results[result].results.infos_analytiques
+			var generales = results[result].results.infos_generales
+			
 			myResult += "<table>";
 			for (var generale in generales){
 				var key = generale;
