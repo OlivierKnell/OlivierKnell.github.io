@@ -52,7 +52,7 @@ function showResInTable(json){
 		var myResult = "<div><h3>Data : </h3><br/>";
 		var params = results[result].params;
 		
-		myResult += "<table><tr><th>Params</th></tr>";
+		myResult += "<table><tr><th>Params key</th><th>Params value</th></tr>";
 		for (var param in params){
 			var key = param;
 			var val = params[param];
@@ -62,12 +62,7 @@ function showResInTable(json){
 		
 		if (document.getElementById("checkValueDate").checked == true){
 			var dates = results[result].valueDate;
-			myResult += "<table>";
-			for (var date in dates){
-				var key = date;
-				var val = dates[date];
-				myResult += "<tr><td>" + JSON.stringify(key) + "</td><td>" + JSON.stringify(val) + "</td></tr>";
-			}
+			myResult += "<table><tr><th>Date</th><th>" + JSON.stringify(dates) + "</th></tr>";
 			myResult += "</table>";
 		};
 		
@@ -75,7 +70,7 @@ function showResInTable(json){
 			var analytiques = results[result].results.infos_analytiques
 			var generales = results[result].results.infos_generales
 			
-			myResult += "<table>";
+			myResult += "<table><tr><th>Generale key</th><th>Generale value</th></tr>";
 			for (var generale in generales){
 				var key = generale;
 				var val = generales[generale];
@@ -83,7 +78,7 @@ function showResInTable(json){
 			}
 			myResult += "</table>";
 			
-			myResult += "<table>";
+			myResult += "<table><tr><th>Analytique key</th><th>Analytique value</th></tr>";
 			for (var analytique in analytiques){
 				var key = analytique;
 				var val = analytiques[analytique];
