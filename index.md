@@ -50,9 +50,10 @@ function showResInTable(json){
 		myResult += "<table>";
 		var params = result.params;
 		for (var param in params){
+			console.log(JSON.stringify(param));
 			var key = param;
 			var val = params[param];
-			myResult += "<tr><td>" + JSON.stringify(key) + "</td><td>" + JSON.stringify(val) + "</td></tr>";
+			myResult += "<tr><td>" + JSON.stringify( + "</td><td>" + JSON.stringify(val) + "</td></tr>";
 		}
 		myResult += "</table>";
 		finalResult += myResult;
