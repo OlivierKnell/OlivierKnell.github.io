@@ -52,7 +52,7 @@ function showResInTable(json){
 		var myResult = "<div><h3>Data : </h3><br/>";
 		var params = results[result].params;
 		
-		myResult += "<table style='width:100%'><tr><th>Params key</th><th>Params value</th></tr>";
+		myResult += "<table style='width:100%;'><tr><th>Params key</th><th>Params value</th></tr>";
 		for (var param in params){
 			var key = param;
 			var val = params[param];
@@ -62,7 +62,7 @@ function showResInTable(json){
 		
 		if (document.getElementById("checkValueDate").checked == true){
 			var dates = results[result].valueDate;
-			myResult += "<table style='width:100%'><tr><th>Date</th><th>" + JSON.stringify(dates) + "</th></tr>";
+			myResult += "<table style='width:100%;'><tr><th>Date</th><th>" + JSON.stringify(dates) + "</th></tr>";
 			myResult += "</table>";
 		};
 		
@@ -70,7 +70,7 @@ function showResInTable(json){
 			var analytiques = results[result].results.infos_analytiques
 			var generales = results[result].results.infos_generales
 			
-			myResult += "<table style='width:100%'><tr><th>Generale key</th><th>Generale value</th></tr>";
+			myResult += "<table style='width:100%;'><tr><th>Generale key</th><th>Generale value</th></tr>";
 			for (var generale in generales){
 				var key = generale;
 				var val = generales[generale];
@@ -78,7 +78,7 @@ function showResInTable(json){
 			}
 			myResult += "</table>";
 			
-			myResult += "<table style='width:100%'><tr><th>Analytique key</th><th>Analytique value</th></tr>";
+			myResult += "<table style='width:100%;'><tr><th>Analytique key</th><th>Analytique value</th></tr>";
 			for (var analytique in analytiques){
 				var key = analytique;
 				var val = analytiques[analytique];
@@ -120,7 +120,7 @@ function testRest(){
 <input type="checkbox" id="checkValueDate"> I want date<br>
 <button onclick="TestInput(myCallback)" >Apply</button>
 <br/>
-<div id="resultJson" style='float:left max-width: 300px;'>
+<div id="resultJson" style='float:left; max-width:300px;'>
 <h2>Result :</h2>
 <p id="resultJ"></p>
 </div>
