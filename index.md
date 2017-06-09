@@ -51,6 +51,7 @@ function showResInTable(json){
 		var myResult = "<div><h3>Data : </h3><br/>";
 		myResult += "<table>";
 		var params = result.params;
+		console.log(JSON.stringify(params));
 		for (var param in params){
 			console.log(JSON.stringify(param));
 			var key = param;
