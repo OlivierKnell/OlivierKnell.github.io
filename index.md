@@ -50,14 +50,47 @@ function showResInTable(json){
 	results = json.data.result
 	for (var result in results){
 		var myResult = "<div><h3>Data : </h3><br/>";
-		myResult += "<table>";
 		var params = results[result].params;
+		var dates = results[result].valueDate;
+		var analytiques = results[result].results.infos_analytiques
+		var generales = results[result].results.infos_generales
+		
+		myResult += "<table>";
 		for (var param in params){
 			var key = param;
 			var val = params[param];
 			myResult += "<tr><td>" + JSON.stringify(key) + "</td><td>" + JSON.stringify(val) + "</td></tr>";
 		}
 		myResult += "</table>";
+		
+		if (document.getElementById("checkResults").checked == true){
+			myResult += "<table>";
+			for (var date in dates){
+				var key = date;
+				var val = dates[date];
+				myResult += "<tr><td>" + JSON.stringify(key) + "</td><td>" + JSON.stringify(val) + "</td></tr>";
+			}
+			myResult += "</table>";
+		};
+		
+		if (document.getElementById("checkValueDate").checked == true){
+			myResult += "<table>";
+			for (var generale in generales){
+				var key = generale;
+				var val = generales[generale];
+				myResult += "<tr><td>" + JSON.stringify(key) + "</td><td>" + JSON.stringify(val) + "</td></tr>";
+			}
+			myResult += "</table>";
+			
+			myResult += "<table>";
+			for (var analytique in analytiques){
+				var key = analytique;
+				var val = analytiques[analytique];
+				myResult += "<tr><td>" + JSON.stringify(key) + "</td><td>" + JSON.stringify(val) + "</td></tr>";
+			}
+			myResult += "</table>";
+		};
+			
 		finalResult += myResult;
 	}
 	document.getElementById("resultT").innerHTML = finalResult;
