@@ -42,6 +42,20 @@ function myCallback(xhr){
 	document.getElementById("result").innerHTML = res;
 }
 
+function showResInTable(json){
+	var finalResult = ""
+	for (var result in json.data.result){
+		var myResult = "<div><h3>Data : </h3><br/>";
+		myResult += "<table>";
+		for (var param in result.params){
+			var key = param;
+			var val = result.params[param];
+			myResult += "<tr><td>" + key + "</td><td>" + val + "</td></tr>";
+		}
+		myResult += "</table>";
+	}
+}
+
 function testRest(){
 	xhr = createCORSRequest("POST", "https://terralego-scraper.herokuapp.com/api/result_eau/");
 	xhr.responseType = 'json';
@@ -69,8 +83,14 @@ function testRest(){
 <input type="checkbox" id="checkValueDate"> I want date<br>
 <button onclick="TestInput(myCallback)" >Apply</button>
 <br/>
+<div id="resultJson">
 <h2>Result :</h2>
-<p id="result"></p>
+<p id="resultJ"></p>
+</div>
+<div id="resultTab">
+<h2>Result in table :</h2>
+<div id="resultT"></div>
+</div>
 <hr/>
 </body>
 </html>
