@@ -129,7 +129,7 @@ function testRest(callback){
 		<div id="resultT"></div>
 	</div>
 	<div id="resultRest">
-		<h2>Result in table :</h2>
+		<h2>Result rest :</h2>
 	</div>
 	<hr/>
 </body>
