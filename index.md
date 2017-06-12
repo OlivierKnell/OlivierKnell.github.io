@@ -112,25 +112,26 @@ function testRest(){
 }
 </script>
 </head>
-
 <body>
-<input id="myInput" type="text" placeholder="code insee here">
-<br/>
-<input type="checkbox" id="checkResults"> I want results<br>
-<input type="checkbox" id="checkValueDate"> I want date<br>
-<button onclick="TestInput(myCallback)" >Apply graphql</button>
-<button onclick="TestRest(myCallback)" >Apply rest</button>
-<br/>
-<div id="resultJson">
-<h2>Result :</h2>
-<p id="resultJ"></p>
-</div>
-<div id="resultTab">
-<h2>Result in table :</h2>
-<div id="resultT"></div>
-</div>
-<div id="resultRest"></div>
-<hr/>
+	<input id="myInput" type="text" placeholder="code insee here">
+	<br/>
+	<input type="checkbox" id="checkResults"> I want results<br>
+	<input type="checkbox" id="checkValueDate"> I want date<br>
+	<button onclick="TestInput(myCallback)" >Apply graphql</button>
+	<button onclick="TestRest(myCallback)" >Apply rest</button>
+	<br/>
+	<div id="resultJson">
+		<h2>Result :</h2>
+		<p id="resultJ"></p>
+	</div>
+	<div id="resultTab">
+		<h2>Result in table :</h2>
+		<div id="resultT"></div>
+	</div>
+	<div id="resultRest">
+		<h2>Result in table :</h2>
+	</div>
+	<hr/>
 </body>
 </html>
 
