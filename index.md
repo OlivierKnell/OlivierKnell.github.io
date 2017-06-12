@@ -92,7 +92,7 @@ function showResInTable(json){
 	document.getElementById("resultT").innerHTML = finalResult;
 }
 
-function testRest(){
+function testRest(callback){
 	xhr = createCORSRequest("POST", "https://terralego-scraper.herokuapp.com/api/result_eau/");
 	xhr.responseType = 'json';
 	xhr.setRequestHeader("Content-Type", "application/json");
