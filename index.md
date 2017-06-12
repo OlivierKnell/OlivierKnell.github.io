@@ -10,12 +10,17 @@ function createCORSRequest(method, url) {
 }
 
 function TestRest(callback){
-	document.getElementById('resultR').innerHTML = "not working";
 	xhr = createCORSRequest("GET", "https://terralego-scraper.herokuapp.com/api/result_eau/");
 	xhr.responseType = 'json';
-	xhr.onreadystatechange = function() { 
-		if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-			callback(xhr);
+	xhr.onload = function () {
+	  console.log('data returned:', xhr.response);
+	  if (xhr.readyState === 4) {
+	    if (xhr.status === 200) {
+	      callback(xhr);
+	    } else {
+	      console.error(xhr.statusText);
+	    }
+	  }
 	}
 	xhr.send();
 }
