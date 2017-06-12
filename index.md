@@ -10,6 +10,7 @@ function createCORSRequest(method, url) {
 }
 
 function testRest(callback){
+	document.getElementById('resultR').innerHTML = "not working";
 	xhr = createCORSRequest("GET", "https://terralego-scraper.herokuapp.com/api/result_eau/");
 	xhr.responseType = 'json';
 	xhr.onreadystatechange = function() { 
