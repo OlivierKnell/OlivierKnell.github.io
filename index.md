@@ -9,6 +9,19 @@ function createCORSRequest(method, url) {
   return xhr;
 }
 
+function testRest(callback){
+	xhr = createCORSRequest("POST", "https://terralego-scraper.herokuapp.com/api/result_eau/");
+	xhr.responseType = 'json';
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.onload = function () {
+	  console.log('data returned:', xhr.response);
+	  callback(xhr);
+	  console.error(xhr.statusText);
+	}
+	xhr.send();
+}
+
 function TestInput(callback) {
 	xhr = createCORSRequest("POST", "https://terralego-scraper.herokuapp.com/graphql");
 	xhr.responseType = 'json';
@@ -92,24 +105,6 @@ function showResInTable(json){
 	document.getElementById("resultT").innerHTML = finalResult;
 }
 
-function testRest(callback){
-	xhr = createCORSRequest("POST", "https://terralego-scraper.herokuapp.com/api/result_eau/");
-	xhr.responseType = 'json';
-	xhr.setRequestHeader("Content-Type", "application/json");
-	xhr.setRequestHeader("Accept", "application/json");
-	xhr.onload = function () {
-	  console.log('data returned:', xhr.response);
-	  if (xhr.readyState === 4) {
-	    if (xhr.status === 200) {
-	      callback(xhr);
-	    } 
-	    else {
-	      console.error(xhr.statusText);
-	    }
-	  }
-	}
-	xhr.send();
-}
 </script>
 </head>
 <body>
