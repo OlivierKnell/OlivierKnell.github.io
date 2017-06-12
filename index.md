@@ -12,12 +12,9 @@ function createCORSRequest(method, url) {
 function testRest(callback){
 	xhr = createCORSRequest("GET", "https://terralego-scraper.herokuapp.com/api/result_eau/");
 	xhr.responseType = 'json';
-	xhr.setRequestHeader("Content-Type", "application/json");
-	xhr.setRequestHeader("Accept", "application/json");
-	xhr.onload = function () {
-	  console.log('data returned:', xhr.response);
-	  callback(xhr);
-	  console.error(xhr.statusText);
+	xhr.onreadystatechange = function() { 
+		if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+			callback(xhr);
 	}
 	xhr.send();
 }
@@ -55,6 +52,13 @@ function myCallback(xhr){
 	var resJson = xhr.response;
 	var res = '<pre>' + JSON.stringify(resJson, null, 4) + '</' + 'pre>';
 	document.getElementById('resultJ').innerHTML = res;
+	showResInTable(resJson);
+}
+
+function myCallbackREST(xhr){
+	var resJson = xhr.response;
+	var res = '<pre>' + JSON.stringify(resJson, null, 4) + '</' + 'pre>';
+	document.getElementById('resultR').innerHTML = res;
 	showResInTable(resJson);
 }
 
@@ -113,7 +117,7 @@ function showResInTable(json){
 	<input type="checkbox" id="checkResults"> I want results<br>
 	<input type="checkbox" id="checkValueDate"> I want date<br>
 	<button onclick="TestInput(myCallback)" >Apply graphql</button>
-	<button onclick="TestRest(myCallback)" >Apply rest</button>
+	<button onclick="TestRest(myCallbackREST)" >Apply rest</button>
 	<br/>
 	<div id="resultJson">
 		<h2>Result :</h2>
@@ -125,6 +129,7 @@ function showResInTable(json){
 	</div>
 	<div id="resultRest">
 		<h2>Result rest :</h2>
+		<div id="resultR"></div>
 	</div>
 	<hr/>
 </body>
