@@ -119,6 +119,7 @@ function testRest(){
 <input type="checkbox" id="checkResults"> I want results<br>
 <input type="checkbox" id="checkValueDate"> I want date<br>
 <button onclick="TestInput(myCallback)" >Apply graphql</button>
+<button onclick="TestRest(myCallback)" >Apply rest</button>
 <br/>
 <div id="resultJson">
 <h2>Result :</h2>
